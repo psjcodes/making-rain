@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+arm_pyart
+metpy
+fsspec
+cartopy
+pyresample
+streamlit
+pydeck
+black
+isort
+cachetools
