@@ -9,7 +9,7 @@ NEXRAD Data: Retrieved from AWS OpenData using S3 (noaa-nexrad-level2).
 ## Architecture Overview
 ### Backend (``nexrad.py``, ``buffer.py``, ``reflectivity.py``)
 1. Data Retrieval
-    - Use ``fsspec`` to list hourly NEXRAD files for the past three hours (``get_hourly_nexrad_file_paths``). The results are cached using a TTL cache (``@st.cache_data``).
+    - Use ``fsspec`` to list hourly NEXRAD files for the past three hours (``get_hourly_nexrad_file_paths``).
 2. Data Processing
     - Use PyART to extract reflectivity data (``get_nexrad_radar``). The results are cached using a TTL cache (``@st.cache_data``).
     - Convert radar sweeps to point cloud data (``nexrad_radar_to_reflectivity_snapshot``). Here we uniformly downsample the data, apply a reflectivity threshold, and finally store the results in lower precision in ``ReflectivitySnapshot`` dataclasses. The dataclass stores `site_id`, `lat`, `lon`, `alt`, `dBZ` for a given ``timestamp``.
