@@ -2,13 +2,15 @@ import time
 from dataclasses import asdict
 
 import pandas as pd
-import pyart
 import pydeck as pdk
 import streamlit as st
 
 from app_util import get_reflectivity_rgba, refl_snapshot_to_df
 from buffer import NEXRADReflectivitySnapshotBuffer
 from sites import RadarSite, radar_sites
+
+
+# Radar Site Selector
 
 st.write("# NEXRAD Radar Sites - West Coast")
 
@@ -61,6 +63,8 @@ if selected:
         )
     except KeyError as e:
         st.error("Missing radar site in selection: {e}")
+
+# Reflectivity Viewer
 
 st.write("# Reflectivity Viewer")
 
