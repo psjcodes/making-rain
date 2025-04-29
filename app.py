@@ -70,12 +70,12 @@ st.write("# Reflectivity Viewer")
 
 if "curr_site" not in st.session_state:  # default current site
     st.session_state["curr_site"] = RadarSite(
-        id="KPDT",
-        city="Pendleton",
-        state="OR",
-        lat=45.69,
-        lon=-118.853,
-        alt=1579,
+        id="KSOX",
+        city="Santa Ana Mountains",
+        state="CA",
+        lat=33.817,
+        lon=-117.635,
+        alt=3105,
     )
 curr_site = st.session_state["curr_site"]
 

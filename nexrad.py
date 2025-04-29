@@ -10,7 +10,6 @@ from config import S3_BUCKET
 from fields import Fields
 
 
-@st.cache_data(ttl=300, show_spinner=False)
 def get_hourly_nexrad_file_paths(
     site_id: str = "KSOX",
     prev_hours: int = 3,
